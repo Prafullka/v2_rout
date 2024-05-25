@@ -6,10 +6,30 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: () => ({
     destinations: [
-      "brazil", 
-      "panama", "hawaii", "jamaica"]
+      { name: "brazil", path: "/brazil" },
+      { name: "panama", path: "/panama" },
+      { name: "hawaii", path: "/hawaii" },
+      { name: "jamaica", path: "/jamaica" },
+    ],
   }),
-  getters: {},
+  // state(){
+  //   return {
+  //     destinations: [
+  //       { name: "brazil", path: '"/brazil"' },
+  //       { name: "panama", path: '"/panama"' },
+  //       { name: "hawaii", path: '"/hawaii"' },
+  //       { name: "jamaica", path: '"/jamaica"' },
+  //     ],
+  //   }
+  // },
+  getters: {
+    destinations: (state) => ({
+      ...state.destinations
+    })
+    // destinations(state){
+    //   return state.destinations
+    // }
+  },
   mutations: {},
   actions: {},
   modules: {},
