@@ -17,30 +17,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-    beforeRouteEnter(to, from, next) {
-      console.log("beforeRouteEnter :", to, from, next);
-      next()
-      // called before the route that renders this component is confirmed.
-      // does NOT have access to `this` component instance,
-      // because it has not been created yet when this guard is called!
-    },
-    beforeRouteUpdate(to, from, next) {
-      console.log("beforeRouteUpdate :", to, from, next);
-      next()
-      // called when the route that renders this component has changed.
-      // This component being reused (by using an explicit `key`) in the new route or not doesn't change anything.
-      // For example, for a route with dynamic params `/foo/:id`, when we
-      // navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
-      // will be reused (unless you provided a `key` to `<router-view>`), and this hook will be called when that happens.
-      // has access to `this` component instance.
-    },
-    beforeRouteLeave(to, from, next) {
-      console.log("beforeRouteLeave :", to, from, next);
-      next()
-      // called when the route that renders this component is about to
-      // be navigated away from.
-      // has access to `this` component instance.
-    }
+    
   },
   {
     path: "/destination/:name",
@@ -54,7 +31,14 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/DestinationExperiencesDetails.vue"),
       },
-    ]
+    ],
+    beforeEnter: (to, from, next) => {
+      console.log("beforeEnter = to, from, next:", to, from, next);
+      // ...
+     
+      next()
+    }
+
   }, {
     path: "/brazil",
     name: "brazil",
@@ -75,7 +59,8 @@ const routes = [
   },
   // ==========================
   {
-    path: "*",
+    path: "/404",
+    alise: "*",
     name: "NotFound0",
     component: () => import(/* webpackChunkName: "Page Not Found" */ "@/views/pages/NotFound.vue"),
   },
