@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkvue_2_router"]=self["webpackChunkvue_2_router"]||[]).push([[607],{8874:function(t,u,e){e.r(u),e.d(u,{default:function(){return l}});var s=function(){var t=this,u=t._self._c;return u("div",{staticClass:"destination"},[u("h1",[t._v("This is page "+t._s(this.$route.params))])])},n=[],r=e(1656),i={},a=(0,r.A)(i,s,n,!1,null,null,null),l=a.exports}}]);
-//# sourceMappingURL=about1.9e9ad6e5.js.map
+//# sourceMappingURL=about1.e74666de.js.map
