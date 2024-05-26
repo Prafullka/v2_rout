@@ -1,9 +1,17 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <div v-for="(destination) in destinations" :key="destination.name">
+    <!-- <div v-for="(destination) in destinations" :key="destination.name">
       <router-link :to="{name: destination.name , params : {...destination} }" >{{ destination.name }}</router-link>
-    </div>
+    </div> -->
+
+    <hr>
+    <!-- <div v-for="(destination) in destinations" :key="destination.name"> -->
+      <!-- <router-link :to="{name: 'DestinationDetails' , params : {...destination} }" >{{ destination.name }}</router-link> -->
+      <!-- <router-link :to="{name: 'DestinationDetails' , params : {a:'sdf'} }" >{{ destination.name }}</router-link> -->
+    <!-- </div> -->
+
+    
   </div>
 </template>
 

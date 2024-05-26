@@ -1,9 +1,10 @@
 <template>
   <div class="destination">
-    <h1>This is page {{ this.$route.params }}</h1>
+    <h1>This is page  <pre>{{ this.$route.params }}</pre> </h1>
     <div>
       <!-- getDdescriptionFromData : {{ getDdescriptionFromRout }} -->
     </div>
+
     <div>
       data_description_rout : {{ data_description_rout }}
     </div>
@@ -18,13 +19,8 @@
     </div>
     <hr>
     <div>
-      getDdescriptionFromStore : {{ getDdescriptionFromStore.description }}
-      <h1>table</h1>
-      <table>
-        <tr v-for="experience in getDdescriptionFromStore.experiences" :key="experience.name" >
-            <td> {{ experience.name }}</td>
-        </tr>
-      </table>
+      getDdescriptionFromStore : {{ getDdescriptionFromStore }}
+    
     </div>
   </div>
 </template>
@@ -48,7 +44,7 @@ export default {
     },
     getDdescriptionFromStore() {
       // return 1 // this.$store
-      return this.$store.getters.destinationByName(this.$route.params.name)
+      return this.$store.getters.destinationByName(this.$route.params.name).description
     }
   }
 
